@@ -7,6 +7,8 @@
     <title>Basic PHP</title>
 </head>
 <body>
-    
+    <h1>
+        <?php echo "Hello" ?>
+    </h1>
 </body>
 </html>
