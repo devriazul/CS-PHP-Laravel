@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>jQuery</title>
+        <style>
+            .box{
+                width: 200px;
+                height: 200px;
+                background-color: green;
+                border-radius: 5px; 
+                position: absolute;
+            }
+            
+            button{
+                margin: 3px 2px;  
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <button id="close">Close</button>
+        <button id="open">Open</button>
+        <button id="all">All</button>
+        <button id="ani">Animation</button>
+        <button id="cb">Call Back</button>
+        
+        <div class="box"></div>
+        <script src="js/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#close').click(function(){
+                    $('.box').fadeOut(2000);
+                });
+                
+                $('#open').click(function(){
+                    $('.box').fadeIn(2000);
+                });
+                
+                $('#all').click(function(){
+                    $('.box').stop().slideToggle(2000);
+                })
+                
+                $('#ani').click(function(){
+                   $('.box').animate({left: '200px'}); 
+                });
+                
+                $('#cb').click(function(){
+                   $('.box').fadeOut(2000,function(){
+                      alert('Hoice'); 
+                   });
+                });
+            });
+        </script>
+    </body>
+</html>
