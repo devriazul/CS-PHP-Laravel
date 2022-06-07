@@ -1,5 +1,5 @@
 <?php 
-    include('contents/header.php');
+    include_once('contents/header.php');
     include('contents/section.php');
     include('contents/footer.php')
 ?>
