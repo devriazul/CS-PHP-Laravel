@@ -2,6 +2,7 @@
 $serverName = "localhost";
 $userName = "root";
 $passWord = "";
+$dbName = "csphp";
 
 //Create connection
 
