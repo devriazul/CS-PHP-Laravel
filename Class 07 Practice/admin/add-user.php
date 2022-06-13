@@ -1,5 +1,8 @@
-<?php require_once('include/header.php'); ?>
-<?php require_once('include/sidebar.php'); ?>
+<?php  
+  require_once('functions/function.php');
+  get_header();
+  get_sidebar();
+  ?>
     
 <div class="row">
     <div class="col-md-12 main_content">
@@ -37,4 +40,4 @@
       </form>
     </div>
 </div>
-<?php require_once('include/footer.php') ?>
+<?php get_footer(); ?>
