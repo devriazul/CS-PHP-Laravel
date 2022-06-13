@@ -69,7 +69,7 @@
                       <td>uzzalbd.creative@gmail.com</td>
                       <td>uzzalbd</td>
                       <td>
-                          <a href="#"><i class="fa fa-plus-square fa-lg"></i></a>
+                          <a href="view-user.php"><i class="fa fa-plus-square fa-lg"></i></a>
                           <a href="#"><i class="fa fa-pencil-square fa-lg"></i></a>
                           <a href="#"><i class="fa fa-trash fa-lg"></i></a>
                       </td>

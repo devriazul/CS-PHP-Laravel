@@ -12,7 +12,7 @@
                         <li><a href="index.php"><i class="fa fa-home"></i> Dashboard</a></li>
                         <li><a href="all-user.php"><i class="fa fa-user-circle"></i> User</a></li>
                         <li><a href="#"><i class="fa fa-bandcamp"></i> Banner</a></li>
-                        <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+                        <li><a href="login.php"><i class="fa fa-power-off"></i> Logout</a></li>
                       </ul>
                   </div>
                 </div>
