@@ -11,7 +11,7 @@
                           <h4 class="card_header_title"><i class="fa fa-gg-circle"></i> User Registration</h4>
                     </div>
                     <div class="col-md-4 text-right">
-                        <a class="btn btn-sm btn-dark card_top_btn" href="#"><i class="fa fa-th"></i> Table</a>
+                        <a class="btn btn-sm btn-dark card_top_btn" href="all-user.php"><i class="fa fa-th"></i> All user</a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
