@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Validation</title>
+        <script>
+            function checkValid(){
+                var name=document.getElementById('name');
+                var email=document.getElementById('email');
+                
+                if(name.value==''){
+                    document.getElementById('name_error').innerHTML='Please enter your name!';
+                    name.focus();
+                    return false;
+                }else if(name.value.length<5){
+                    document.getElementById('name_error').innerHTML='Please enter min 5 char!';
+                    name.focus();
+                    return false;      
+                }else if(name.value.length>10){
+                    document.getElementById('name_error').innerHTML='Please enter max 10 char!';
+                    name.focus();
+                    return false;      
+                }else{
+                    document.getElementById('name_error').innerHTML='';
+                }
+                
+                if(email.value==''){
+                    document.getElementById('email_error').innerHTML='Please enter your email address!';
+                    email.focus();
+                    return false;
+                }else{
+                    document.getElementById('email_error').innerHTML='';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            Name: <input type="text" name="" id="name"/><br>
+            <div class="error" id="name_error" style="color: red; padding-left: 30px;"></div><br><br>
+            Email: <input type="text" name="" id="email"/><br>
+            <div class="error" id="email_error" style="color: red; padding-left: 30px;"></div><br><br>
+            <input type="submit" value="SUBMIT" onclick="return checkValid()">
+        </form>
+    </body>
+</html>
