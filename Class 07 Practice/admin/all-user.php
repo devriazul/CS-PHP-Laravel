@@ -10,10 +10,10 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-8">
-                          <h4 class="card_header_title"><i class="fa fa-gg-circle"></i> Table All Data</h4>
+                          <h4 class="card_header_title"><i class="fa fa-gg-circle"></i> All user information</h4>
                     </div>
                     <div class="col-md-4 text-right">
-                        <a class="btn btn-sm btn-dark card_top_btn" href="#"><i class="fa fa-th"></i> Form</a>
+                        <a class="btn btn-sm btn-dark card_top_btn" href="add-user.php"><i class="fa fa-th"></i> Add</a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
