@@ -2,11 +2,32 @@
   require_once('functions/function.php');
   get_header();
   get_sidebar();
+
+  if(!empty($_POST)){
+    $name = $_POST['name'];
+    $phone = $_POST['phone'];
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $pw = $_POST['pass'];
+    $rpw = $_POST['re-pass'];
+
+    $insert = "INSERT INTO users(user_name, user_phone, user_email, user_username, user_password) 
+    VALUES('$name', '$phone','$email', '$username', '$pw' )";
+
+    if(mysqli_query($conn,$insert)){
+      echo "User registration success!";
+    }else{
+      echo "User registration failed!";
+    };
+
+  }
+
+
   ?>
     
 <div class="row">
     <div class="col-md-12 main_content">
-        <form>
+        <form method="POST" action="" enctype="multipart/form-data">
           <div class="card">
             <div class="card-header">
                 <div class="row">
@@ -23,37 +44,37 @@
                   <div class="form-group row custom_form_group">
                     <label class="col-sm-3 col-form-label">Name:</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="" name="">
+                      <input type="text" class="form-control" id="" name="name">
                     </div>
                   </div> 
                   <div class="form-group row custom_form_group">
                     <label class="col-sm-3 col-form-label">User Name:</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="" name="">
+                      <input type="text" class="form-control" id="" name="username">
                     </div>
                   </div> 
                   <div class="form-group row custom_form_group">
                     <label class="col-sm-3 col-form-label">Email:</label>
                     <div class="col-sm-7">
-                      <input type="email" class="form-control" id="" name="">
+                      <input type="email" class="form-control" id="" name="email">
                     </div>
                   </div> 
                   <div class="form-group row custom_form_group">
                     <label class="col-sm-3 col-form-label">Phone:</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="" name="">
+                      <input type="text" class="form-control" id="" name="phone">
                     </div>
                   </div> 
                   <div class="form-group row custom_form_group">
                     <label class="col-sm-3 col-form-label">Password:</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="" name="">
+                      <input type="text" class="form-control" id="" name="pass">
                     </div>
                   </div> 
                   <div class="form-group row custom_form_group">
                     <label class="col-sm-3 col-form-label">Confirm Password:</label>
                     <div class="col-sm-7">
-                      <input type="text" class="form-control" id="" name="">
+                      <input type="text" class="form-control" id="" name="re-pass">
                     </div>
                   </div> 
                   <div class="form-group row custom_form_group">

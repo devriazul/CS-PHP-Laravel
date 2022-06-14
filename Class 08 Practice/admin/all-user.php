@@ -30,50 +30,25 @@
                     </tr>
                   </thead>
                   <tbody>
+                    <?php 
+                    $sel = "SELECT * FROM users ORDER BY user_id DESC";
+                    $Q = mysqli_query($conn,$sel);
+                    while($data = mysqli_fetch_assoc($Q)){
+                    ?>
                     <tr>
-                      <td>Saidul Islam Uzzal</td>
-                      <td>01710726035</td>
-                      <td>uzzalbd.creative@gmail.com</td>
-                      <td>uzzalbd</td>
+                      <td><?php echo $data['user_name'] ?></td>
+                      <td><?= $data['user_phone'] ?></td>
+                      <td><?= $data['user_email'] ?></td>
+                      <td><?= $data['user_username'] ?></td>
                       <td>
                           <a href="#"><i class="fa fa-plus-square fa-lg"></i></a>
-                          <a href="#"><i class="fa fa-pencil-square fa-lg"></i></a>
+                          <a href="edit.php"><i class="fa fa-pencil-square fa-lg"></i></a>
                           <a href="#"><i class="fa fa-trash fa-lg"></i></a>
                       </td>
                     </tr>
-                    <tr>
-                      <td>Saidul Islam Uzzal</td>
-                      <td>01710726035</td>
-                      <td>uzzalbd.creative@gmail.com</td>
-                      <td>uzzalbd</td>
-                      <td>
-                          <a href="#"><i class="fa fa-plus-square fa-lg"></i></a>
-                          <a href="#"><i class="fa fa-pencil-square fa-lg"></i></a>
-                          <a href="#"><i class="fa fa-trash fa-lg"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Saidul Islam Uzzal</td>
-                      <td>01710726035</td>
-                      <td>uzzalbd.creative@gmail.com</td>
-                      <td>uzzalbd</td>
-                      <td>
-                          <a href="#"><i class="fa fa-plus-square fa-lg"></i></a>
-                          <a href="#"><i class="fa fa-pencil-square fa-lg"></i></a>
-                          <a href="#"><i class="fa fa-trash fa-lg"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>Saidul Islam Uzzal</td>
-                      <td>01710726035</td>
-                      <td>uzzalbd.creative@gmail.com</td>
-                      <td>uzzalbd</td>
-                      <td>
-                          <a href="view-user.php"><i class="fa fa-plus-square fa-lg"></i></a>
-                          <a href="#"><i class="fa fa-pencil-square fa-lg"></i></a>
-                          <a href="#"><i class="fa fa-trash fa-lg"></i></a>
-                      </td>
-                    </tr>
+                    <?php   
+                    }
+                    ?>
                   </tbody>
                 </table>
             </div>
