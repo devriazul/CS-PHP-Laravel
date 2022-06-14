@@ -1,5 +1,7 @@
 <?php 
 
+require_once ('db.php');
+
 function get_header(){
     require_once('include/header.php');
 }
