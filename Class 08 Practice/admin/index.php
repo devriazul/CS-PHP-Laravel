@@ -6,7 +6,7 @@
 
   <div class="row">
       <div class="col-md-12 main_content">
-          Welcome Mr. Xyz
+          Welcome Mr. Riazul Islam
       </div>
   </div>
   <?php
