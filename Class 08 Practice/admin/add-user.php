@@ -27,11 +27,52 @@
                     </div>
                   </div> 
                   <div class="form-group row custom_form_group">
+                    <label class="col-sm-3 col-form-label">User Name:</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" id="" name="">
+                    </div>
+                  </div> 
+                  <div class="form-group row custom_form_group">
                     <label class="col-sm-3 col-form-label">Email:</label>
                     <div class="col-sm-7">
                       <input type="email" class="form-control" id="" name="">
                     </div>
                   </div> 
+                  <div class="form-group row custom_form_group">
+                    <label class="col-sm-3 col-form-label">Phone:</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" id="" name="">
+                    </div>
+                  </div> 
+                  <div class="form-group row custom_form_group">
+                    <label class="col-sm-3 col-form-label">Password:</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" id="" name="">
+                    </div>
+                  </div> 
+                  <div class="form-group row custom_form_group">
+                    <label class="col-sm-3 col-form-label">Confirm Password:</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" id="" name="">
+                    </div>
+                  </div> 
+                  <div class="form-group row custom_form_group">
+                    <label class="col-sm-3 col-form-label">User Role:</label>
+                    <div class="col-sm-7">
+                      <select name="" id="">
+                        <option value="">Select Role</option>
+                        <option value="">Admin</option>
+                        <option value="">Super Admin</option>
+                        <option value="">General User</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group row custom_form_group">
+                    <label class="col-sm-3 col-form-label">Photo Browse:</label>
+                    <div class="col-sm-7">
+                      <input type="file" class="form-control" id="" name="">
+                    </div>
+                  </div>  
             </div>
             <div class="card-footer text-center">
                 <button type="submit" class="btn btn-sm btn-dark submit_btn">REGISTRATION</button>
