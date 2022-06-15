@@ -22,8 +22,8 @@
               <div class="card-body">
               <?php 
                     $sel = "SELECT * FROM users";
-                    $Q = mysqli_query($conn,$sel);
-                    $data = mysqli_fetch_assoc($Q);
+                    $query = mysqli_query($conn,$sel);
+                    $data = mysqli_fetch_assoc($query);
                     ?>
                   <div class="form-group row custom_form_group">
                       <label class="col-sm-3 col-form-label">Name:</label>
