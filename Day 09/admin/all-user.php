@@ -47,7 +47,11 @@
                           <a href="delete-user.php?d=<?= $data['user_id']?>"><i class="fa fa-trash fa-lg"></i></a>
                       </td>
                       <td>
-                        <img src="<?= $data['user_photo'] ?>" alt="">
+                        <?php if($data['user_photo']!='') {?>
+                        <img src="uploads/<?= $data['user_photo'] ?>" alt="" height="50px">
+                        <?php }else{?>
+                          <img src="uploads/avatar.png" alt="" height="50px">
+                          <?php }?>
                       </td>
                     </tr>
                     <?php   
