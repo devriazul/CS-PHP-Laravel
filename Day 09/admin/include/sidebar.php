@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-md-2 sidebar_part">
                   <div class="user_part">
-                    <img src="images/avatar.png" alt="avatar">
+                    <img src="images/riaz.jpg" alt="Riazul Islam">
                     <h4>Riazul Islam</h4>
                     <p><i class="fa fa-circle"></i> Online</p>
                   </div>
