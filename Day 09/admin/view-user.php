@@ -46,6 +46,17 @@
                                 <td>:</td>
                                 <td><?= $data['user_username'] ?></td>
                             </tr>
+                            <tr>
+                                <td>Photo</td>
+                                <td>:</td>
+                                <td>
+                                    <?php if($data['user_photo']!='') {?>
+                                    <img src="uploads/<?= $data['user_photo'] ?>" alt="" height="100px">
+                                    <?php }else{?>
+                                    <img src="uploads/avatar.png" alt="" height="50px">
+                                    <?php }?>
+                                </td>
+                            </tr>
                         </table>
                     </div>
                     <div class="col-md-2"></div>
