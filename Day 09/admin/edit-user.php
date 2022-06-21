@@ -2,6 +2,10 @@
   require_once('functions/function.php');
   get_header();
   get_sidebar();
+  $id=$_GET['e'];
+  $sel="SELECT * FROM users WHERE user_id='$id'";
+  $Q=mysqli_query($conn,$sel);
+  $data=mysqli_fetch_assoc($Q);
 ?>
 
   <div class="row">
@@ -21,7 +25,7 @@
               </div>
               <div class="card-body">
               <?php 
-                    $sel = "SELECT * FROM users";
+                    $sel = "SELECT * FROM users WHERE user_id='$id'";
                     $query = mysqli_query($conn,$sel);
                     $data = mysqli_fetch_assoc($query);
                     ?>

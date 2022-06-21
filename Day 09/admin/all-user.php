@@ -13,7 +13,7 @@
                           <h4 class="card_header_title"><i class="fa fa-gg-circle"></i> All user information</h4>
                     </div>
                     <div class="col-md-4 text-right">
-                        <a class="btn btn-sm btn-dark card_top_btn" href="add-user.php"><i class="fa fa-th"></i> Add</a>
+                        <a class="btn btn-sm btn-dark card_top_btn" href="add-user.php"><i class="fa fa-plus"></i> Add</a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -27,6 +27,7 @@
                       <th scope="col">Email</th>
                       <th scope="col">Username</th>
                       <th scope="col">Manage</th>
+                      <th scope="col">Photo</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -41,9 +42,12 @@
                       <td><?= $data['user_email'] ?></td>
                       <td><?= $data['user_username'] ?></td>
                       <td>
-                          <a href="#"><i class="fa fa-plus-square fa-lg"></i></a>
-                          <a href="edit.php"><i class="fa fa-pencil-square fa-lg"></i></a>
-                          <a href="#"><i class="fa fa-trash fa-lg"></i></a>
+                          <a href="view-user.php?v=<?= $data['user_id']?>"><i class="fa fa-eye fa-lg"></i></a>
+                          <a href="edit-user.php?e=<?=$data['user_id']?>"><i class="fa fa-pencil-square fa-lg"></i></a>
+                          <a href="delete-user.php?d=<?= $data['user_id']?>"><i class="fa fa-trash fa-lg"></i></a>
+                      </td>
+                      <td>
+                        <img src="<?= $data['user_photo'] ?>" alt="">
                       </td>
                     </tr>
                     <?php   

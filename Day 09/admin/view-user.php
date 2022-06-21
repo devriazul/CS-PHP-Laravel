@@ -2,6 +2,10 @@
   require_once('functions/function.php');
   get_header();
   get_sidebar();
+  $id=$_GET['v'];
+  $sel="SELECT * FROM users WHERE user_id='$id'";
+  $Q=mysqli_query($conn,$sel);
+  $data=mysqli_fetch_assoc($Q);
   ?>
 <div class="row">
     <div class="col-md-12 main_content">
@@ -12,7 +16,7 @@
                         <h4 class="card_header_title"><i class="fa fa-gg-circle"></i> View Data</h4>
                     </div>
                     <div class="col-md-4 text-right">
-                        <a class="btn btn-sm btn-dark card_top_btn" href="#"><i class="fa fa-th"></i> Form</a>
+                        <a class="btn btn-sm btn-dark card_top_btn" href="all-user.php"><i class="fa fa-th"></i> User list</a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -25,22 +29,22 @@
                             <tr>
                                 <td>Name</td>
                                 <td>:</td>
-                                <td>Saidul Islam Uzzal</td>
+                                <td><?= $data['user_name'] ?></td>
                             </tr>
                             <tr>
                                 <td>Phone</td>
                                 <td>:</td>
-                                <td>01710726035</td>
+                                <td><?= $data['user_phone'] ?></td>
                             </tr>
                             <tr>
                                 <td>Email</td>
                                 <td>:</td>
-                                <td>uzzalbd.creative@gmail.com</td>
+                                <td><?= $data['user_email'] ?></td>
                             </tr>
                             <tr>
                                 <td>Username</td>
                                 <td>:</td>
-                                <td>uzzalbd</td>
+                                <td><?= $data['user_username'] ?></td>
                             </tr>
                         </table>
                     </div>
