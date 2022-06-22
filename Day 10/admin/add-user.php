@@ -11,8 +11,10 @@
     $pw = $_POST['pass'];
     $rpw = $_POST['re-pass'];
     $image = $_FILES['pic'];
-    $imageName = 'user-'.time().'-'.rand(1000,100000000).'.'.pathinfo($image['name'], PATHINFO_EXTENSION);
-
+    $imageName='';
+    if($image['name']!=''){
+      $imageName = 'user-'.time().'-'.rand(1000,100000000).'.'.pathinfo($image['name'], PATHINFO_EXTENSION);
+    }
     $insert = "INSERT INTO users(user_name, user_phone, user_email, user_username, user_password, user_photo) 
     VALUES('$name', '$phone','$email', '$username', '$pw', '$imageName')";
 
@@ -94,7 +96,7 @@
                   <div class="form-group row custom_form_group">
                     <label class="col-sm-3 col-form-label">Photo Browse:</label>
                     <div class="col-sm-7">
-                      <input type="file" class="form-control" id="" name="pic" required>
+                      <input type="file" class="form-control" id="" name="pic">
                     </div>
                   </div>  
             </div>
