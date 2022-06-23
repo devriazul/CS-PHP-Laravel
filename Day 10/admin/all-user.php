@@ -26,13 +26,14 @@
                       <th scope="col">Phone</th>
                       <th scope="col">Email</th>
                       <th scope="col">Username</th>
+                      <th scope="col">Role</th>
                       <th scope="col">Manage</th>
                       <th scope="col">Photo</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php 
-                    $sel = "SELECT * FROM users ORDER BY user_id DESC";
+                    $sel = "SELECT * FROM users NATURAL JOIN role ORDER BY user_id DESC";
                     $Q = mysqli_query($conn,$sel);
                     while($data = mysqli_fetch_assoc($Q)){
                     ?>
@@ -41,6 +42,7 @@
                       <td><?= $data['user_phone'] ?></td>
                       <td><?= $data['user_email'] ?></td>
                       <td><?= $data['user_username'] ?></td>
+                      <td><?= $data['role_name'] ?></td>
                       <td>
                           <a href="view-user.php?v=<?= $data['user_id']?>"><i class="fa fa-eye fa-lg"></i></a>
                           <a href="edit-user.php?e=<?=$data['user_id']?>"><i class="fa fa-pencil-square fa-lg"></i></a>

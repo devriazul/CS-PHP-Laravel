@@ -8,23 +8,26 @@
     $phone = $_POST['phone'];
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $pw = $_POST['pass'];
-    $rpw = $_POST['re-pass'];
+    $pw = md5($_POST['pass']);
+    $rpw = md5($_POST['re-pass']);
+    $role = $_POST['role'];
     $image = $_FILES['pic'];
     $imageName='';
     if($image['name']!=''){
       $imageName = 'user-'.time().'-'.rand(1000,100000000).'.'.pathinfo($image['name'], PATHINFO_EXTENSION);
     }
-    $insert = "INSERT INTO users(user_name, user_phone, user_email, user_username, user_password, user_photo) 
-    VALUES('$name', '$phone','$email', '$username', '$pw', '$imageName')";
-
-    if(mysqli_query($conn,$insert)){
-      move_uploaded_file($image['tmp_name'],'uploads/'.$imageName);
-      echo "User registration success!";
-    }else{
-      echo "User registration failed!";
-    };
-
+    $insert = "INSERT INTO users(user_name, user_phone, user_email, user_username, user_password, role_id, user_photo) 
+    VALUES('$name', '$phone','$email', '$username', '$pw', '$role', '$imageName')";
+    if(!empty($role)){
+      if(mysqli_query($conn,$insert)){
+        move_uploaded_file($image['tmp_name'],'uploads/'.$imageName);
+        echo "User registration success!";
+      }else{
+        echo "Please select user role!";
+      }
+  }else{
+    echo "User registration failed!";
+  }
   }
 
 
@@ -85,7 +88,7 @@
                   <div class="form-group row custom_form_group">
                     <label class="col-sm-3 col-form-label">User Role:</label>
                     <div class="col-sm-7">
-                      <select name="" id="">
+                      <select class="form-control" name="role" id="">
                         <option value="">Select Role</option>
                         <?php
                           $selr="SELECT * FROM role ORDER BY role_id ASC";
