@@ -19,6 +19,7 @@
     $insert = "INSERT INTO users(user_name, user_phone, user_email, user_username, user_password, role_id, user_photo) 
     VALUES('$name', '$phone','$email', '$username', '$pw', '$role', '$imageName')";
     if(!empty($role)){
+      if($pw === $rpw){
       if(mysqli_query($conn,$insert)){
         move_uploaded_file($image['tmp_name'],'uploads/'.$imageName);
         echo "User registration success!";
@@ -26,10 +27,12 @@
         echo "Please select user role!";
       }
   }else{
+    echo "Password Did not match";
+  }
+  }else{
     echo "User registration failed!";
   }
   }
-
 
   ?>
     
