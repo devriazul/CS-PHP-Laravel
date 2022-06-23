@@ -92,7 +92,7 @@
                           $Qr=mysqli_query($conn,$selr);
                           while($urole=mysqli_fetch_assoc($Qr)){
                           ?>
-                        <option value=""><?= $urole['role_name'] ?></option>
+                        <option value="<?= $urole['role_id'] ?>"><?= $urole['role_name'] ?></option>
                         <?php   } ?>
                       </select>
                     </div>
