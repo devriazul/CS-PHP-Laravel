@@ -87,9 +87,13 @@
                     <div class="col-sm-7">
                       <select name="" id="">
                         <option value="">Select Role</option>
-                        <option value="">Admin</option>
-                        <option value="">Super Admin</option>
-                        <option value="">General User</option>
+                        <?php
+                          $selr="SELECT * FROM role ORDER BY role_id ASC";
+                          $Qr=mysqli_query($conn,$selr);
+                          while($urole=mysqli_fetch_assoc($Qr)){
+                          ?>
+                        <option value=""><?= $urole['role_name'] ?></option>
+                        <?php   } ?>
                       </select>
                     </div>
                   </div>
