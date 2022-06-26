@@ -43,7 +43,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-8">
-                          <h4 class="card_header_title"><i class="fa fa-gg-circle"></i> User Registration</h4>
+                          <h4 class="card_header_title"><i class="fa fa-gg-circle"></i> Update User Information</h4>
                     </div>
                     <div class="col-md-4 text-right">
                         <a class="btn btn-sm btn-dark card_top_btn" href="all-user.php"><i class="fa fa-th"></i> All user</a>
