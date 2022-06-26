@@ -11,32 +11,28 @@
   if(!empty($_POST)){
     $name = $_POST['name'];
     $phone = $_POST['phone'];
-    // $username = $_POST['username'];
     $email = $_POST['email'];
-    // $pw = md5($_POST['pass']);
-    // $rpw = md5($_POST['re-pass']);
     $role = $_POST['role'];
-    // $image = $_FILES['pic'];
-    $imageName='';
-    if($image['name']!=''){
-      $imageName = 'user-'.time().'-'.rand(1000,100000000).'.'.pathinfo($image['name'], PATHINFO_EXTENSION);
-    }
-    // $insert = "INSERT INTO users(user_name, user_phone, user_email, user_username, user_password, role_id, user_photo) 
-    // VALUES('$name', '$phone','$email', '$username', '$pw', '$role', '$imageName')";
+    $image = $_FILES['pic'];
 
     $update="UPDATE users SET user_name='$name', user_phone='$phone', user_email='$email', role_id='$role' WHERE user_id='$id'";
 
     if(!empty($role)){
       // if($pw === $rpw){
       if(mysqli_query($conn,$update)){
-        move_uploaded_file($image['tmp_name'],'uploads/'.$imageName);
-        echo "User update success!";
+        if($image['name']!=''){
+          $imageName = 'user-'.time().'-'.rand(1000,100000000).'.'.pathinfo($image['name'], PATHINFO_EXTENSION);
+          $updimg="UPDATE users SET user_photo='$imageName' WHERE user_id='$id'";
+          if(mysqli_query($conn, $updimg)){
+            move_uploaded_file($image['tmp_name'],'uploads/'.$imageName);
+            echo "User information update successfully with images!";
+          }
+        }
+        echo "User information update successfully!";
       }else{
         echo "Please select user role!";
       }
-  //   }else{
-  //   echo "Password Did not match";
-  // }
+ 
     }else{
     echo "User update failed!";
   }
