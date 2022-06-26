@@ -111,15 +111,18 @@
                     <label class="col-sm-3 col-form-label">Photo Browse:</label>
                     <div class="col-sm-7">
                       <input type="file" class="form-control" id="" name="pic">
-                    </div>
-                    <div class="col-md-2">
-                    <?php if($data['user_photo']!='') {?>
-                        <img src="uploads/<?= $data['user_photo'] ?>" alt="" height="50px">
+                    </div> 
+                  </div> 
+                  <div class="form-group row custom_form_group">
+                      <label class="col-sm-3 col-form-label">Photo:</label>
+                    <div class="col-sm-7">
+                        <?php if($data['user_photo']!='') {?>
+                          <img src="uploads/<?= $data['user_photo'] ?>" alt="" height="100px">
                         <?php }else{?>
-                          <img src="uploads/avatar.png" alt="" height="50px">
-                          <?php }?>
+                          <img src="uploads/avatar.png" alt="" height="100px">
+                        <?php }?>
                     </div>
-                  </div>  
+                  </div> 
             </div>
             <div class="card-footer text-center">
                 <button type="submit" class="btn btn-sm btn-dark submit_btn">Update</button>
