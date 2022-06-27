@@ -1,3 +1,7 @@
+<?php
+     require_once('functions/function.php');                   
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -19,9 +23,26 @@
                 </div>
                 <div class="card-body">
                   <h4 class="text-center">LOGIN</h4>
-                  <form class="form-signin">
-                    <input type="text" class="form-control mb-2" placeholder="Email" required autofocus>
-                    <input type="password" class="form-control mb-2" placeholder="Password" required>
+                  <?php
+                    if(!empty($_POST)){
+                      $username=$_POST['username'];
+                      $password=md5($_POST['password']);
+
+                      $sel="SELECT * FROM users WHERE user_username='$username' AND user_password='$password'";
+
+                      $Q=mysqli_query($conn,$sel);
+                      $data=mysqli_fetch_assoc($Q);
+                      if($data){
+                        header('Location:index.php');
+                      }else{
+                        echo "Username and password incorrect!";
+                      }
+                    }
+                  
+                  ?>
+                  <form class="form-signin" method="POST" action="">
+                    <input type="text" class="form-control mb-2" name="username" placeholder="Username/Email" required autofocus>
+                    <input type="password" class="form-control mb-2" name="password" placeholder="Password" required>
                     <button class="btn btn-md btn-primary btn-block mb-1" type="submit">Sign in</button>
                     <label class="checkbox float-left">
                       <input type="checkbox" value="remember-me">
