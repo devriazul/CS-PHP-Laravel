@@ -25,10 +25,12 @@
           $updimg="UPDATE users SET user_photo='$imageName' WHERE user_id='$id'";
           if(mysqli_query($conn, $updimg)){
             move_uploaded_file($image['tmp_name'],'uploads/'.$imageName);
-            echo "User information update successfully with images!";
+            // echo "User information update successfully with images!";
+            header('Location:view-user.php?v='.$id);
           }
         }
-        echo "User information update successfully!";
+        // echo "User information update successfully!";
+        header('Location:view-user.php?v='.$id);
       }else{
         echo "Please select user role!";
       }
