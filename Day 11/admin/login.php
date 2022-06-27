@@ -28,7 +28,7 @@
                       $username=$_POST['username'];
                       $password=md5($_POST['password']);
 
-                      $sel="SELECT * FROM users WHERE user_username='$username' AND user_password='$password'";
+                      $sel="SELECT * FROM users WHERE user_username='$username' OR user_email='$username' AND user_password='$password'";
 
                       $Q=mysqli_query($conn,$sel);
                       $data=mysqli_fetch_assoc($Q);
